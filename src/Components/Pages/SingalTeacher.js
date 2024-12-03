@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 function SingalTeacher() {
   return (
     <div>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-md-5">
             <div className="details-user">

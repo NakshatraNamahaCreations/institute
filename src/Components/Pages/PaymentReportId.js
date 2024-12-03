@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-
-function SingalStudent() {
-  const navigation = useNavigate("");
-
-  const handleNavigation = () => {
-    navigation("/students/status/:id");
-  };
-
+import Box from "@mui/material/Box";
+import { DataGrid } from "@mui/x-data-grid";
+function PaymentReportId() {
   return (
     <div>
       <div className="container-fluid">
@@ -43,6 +37,9 @@ function SingalStudent() {
             <div className="student-name">
               Contact Number : <span className="kmm-tag">+9193393023</span>
             </div>
+            <div className="student-name">
+              Class : <span className="kmm-tag">12th</span>
+            </div>
           </div>
           <div className="col-md-3">
             <div className="student-name">
@@ -56,32 +53,36 @@ function SingalStudent() {
             </div>
           </div>
         </div>
-        <div className="user-progress" onClick={handleNavigation}>
-          <div className="card-progress">
-            <div className="" style={{ fontSize: "15px", fontWeight: "bold" }}>
-              Batch Name
-            </div>
-            <div className="">JEE Basic</div>
+
+        <div className="student-status">
+          <h5 className="mb-2 pt-3">Subscriptions Details</h5>
+          <div className="" style={{ fontWeight: "500" }}>
+            SubscriptionType :{" "}
+            <span style={{ color: "#26337c" }}>JEE-Advanced Course</span>
           </div>
-          <div className="card-progress mt-3">
-            <div className="" style={{ fontSize: "15px", fontWeight: "bold" }}>
-              Progress
-            </div>
-            <div className="">53%</div>
+          <div className="" style={{ fontWeight: "500" }}>
+            Subscription Start Date :{" "}
+            <span style={{ color: "#26337c" }}>15th September 2024</span>
+          </div>
+          <div className="" style={{ fontWeight: "500" }}>
+            New Payment Date :{" "}
+            <span style={{ color: "#26337c" }}>15 October 2024</span>
           </div>
         </div>
-        <div className="user-progress">
-          <div className="card-progress">
-            <div className="" style={{ fontSize: "15px", fontWeight: "bold" }}>
-              Batch Name
-            </div>
-            <div className="">JEE Basic2</div>
-          </div>
-          <div className="card-progress mt-3">
-            <div className="" style={{ fontSize: "15px", fontWeight: "bold" }}>
-              Progress
-            </div>
-            <div className="">23%</div>
+
+        <div
+          className="mt-4"
+          style={{
+            backgroundColor: "white",
+            width: "fit-content",
+            padding: "10px",
+            borderRadius: "5px",
+          }}
+        >
+          <h5 className="mb-2">Payment Details</h5>
+          <div className="" style={{ fontWeight: "500" }}>
+            Subscription Price :{" "}
+            <span style={{ color: "#26337c" }}>Rs. 2,595</span>
           </div>
         </div>
       </div>
@@ -89,4 +90,4 @@ function SingalStudent() {
   );
 }
 
-export default SingalStudent;
+export default PaymentReportId;

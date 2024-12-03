@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import Form from "react-bootstrap/Form";
 import { FaPlusCircle } from "react-icons/fa";
 import { Button } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 function AdminCategory() {
   const [category, setCategory] = useState("");
@@ -17,6 +18,16 @@ function AdminCategory() {
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
   };
+
+  const handleClick = () => {
+    Swal.fire({
+      title: 'Successfully Create',
+      // text: 'You clicked the button!',
+      icon: 'success',
+      confirmButtonText: 'OK',
+    });
+  };
+
   return (
     <div>
       <div className="pt-2 px-2">
@@ -304,7 +315,7 @@ function AdminCategory() {
               </div>
             </>
           )}
-          <div className="hvr-sweep-to-right">Save</div>
+          <div className="hvr-sweep-to-right"onClick={()=> {handleClick()}}>Save</div>
         </div>
       </div>
     </div>

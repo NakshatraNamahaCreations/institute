@@ -11,6 +11,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import TopHeader from "../TopHeader";
+import { BsTicketPerforatedFill } from "react-icons/bs";
+import { AiFillProduct } from "react-icons/ai";
+import { IoWalletSharp } from "react-icons/io5";
+
 function Dashboard() {
   const data = [
     {
@@ -61,12 +65,12 @@ function Dashboard() {
     <div>
       <div className="dash-card">
         <div className="dashbard-card">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col-md-3">
                 <div className="card-dash ">
-                  <div className="d-flex justify-content-between">
-                    <IoSchoolSharp style={{ fontSize: "25px" }} />
+                  <div className="ghr-0 d-flex justify-content-between">
+                    <IoSchoolSharp className="icons-p" />
                     <div className="total-student">Total Students</div>
                   </div>
                   <div className="">
@@ -76,8 +80,8 @@ function Dashboard() {
               </div>
               <div className="col-md-3">
                 <div className="card-dash ">
-                  <div className="d-flex justify-content-between">
-                    <IoSchoolSharp style={{ fontSize: "25px" }} />
+                  <div className="ghr-0 d-flex justify-content-between">
+                    <AiFillProduct className="icons-p"  />
                     <div className="total-student">Total Products</div>
                   </div>
                   <div className="">
@@ -87,9 +91,21 @@ function Dashboard() {
               </div>
               <div className="col-md-3">
                 <div className="card-dash ">
-                  <div className="d-flex justify-content-between">
-                    <IoSchoolSharp style={{ fontSize: "25px" }} />
+                  <div className="ghr-0 d-flex justify-content-between">
+                    <BsTicketPerforatedFill className="icons-p"  />
                     <div className="total-student">New Tickets</div>
+                  </div>
+                  <div className="">
+                    <p className="total-p">49999.00</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="card-dash ">
+                  <div className="ghr-0 d-flex justify-content-between">
+                    <IoWalletSharp 
+                    className="icons-p"  />
+                    <div className="total-student">Wallets</div>
                   </div>
                   <div className="">
                     <p className="total-p">49999.00</p>

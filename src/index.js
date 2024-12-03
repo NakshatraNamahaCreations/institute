@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'aos/dist/aos.css'; 
+// import 'sweetalert2/src/sweetalert2.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

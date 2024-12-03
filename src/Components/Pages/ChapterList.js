@@ -82,7 +82,7 @@ function ChapterList() {
           <FaSearch className="search-icon" />
         </div>
         <Button className="add-btn" onClick={handleShow}>
-          Add
+        Create
         </Button>
       </div>
       <Box sx={{ width: "100%" }}>

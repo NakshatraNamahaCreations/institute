@@ -6,36 +6,26 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { DataGrid } from "@mui/x-data-grid";
 import { FaRegEdit } from "react-icons/fa";
-import { FaGreaterThan } from "react-icons/fa6";
+import { MdDeleteForever } from "react-icons/md";
+import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
-import VisibilityIcon from '@mui/icons-material/Visibility';
 
-function Student() {
-  const navigations = useNavigate();
-
+function ProductServices() {
   const rows = [
     {
       id: 1,
-      col1: "1",
-      col2: "John Doe",
-      col3: "12/12/2024",
-      col4: "ALLEN IIT JEE",
-      col5: "JEE-MAINS",
-      col6: "02/12/2024",
+      col1: "01",
+      col2: "JEE Advance series 1",
+      col3: "11555 INR",
+      col4: "12/12/2024",
     },
   ];
 
-  const handleNavigation = () => {
-    navigations("/students/:id");
-  };
-
   const columns = [
     { field: "col1", headerName: "S.No.", width: 100 },
-    { field: "col2", headerName: "Student Name", width: 200 },
-    { field: "col3", headerName: "Joining Date", width: 200 },
-    { field: "col4", headerName: "Institute Name", width: 200 },
-    { field: "col5", headerName: "Batch Name", width: 200 },
-    { field: "col6", headerName: "Created Date", width: 200 },
+    { field: "col2", headerName: "Product", width: 200 },
+    { field: "col3", headerName: "Price", width: 200 },
+    { field: "col4", headerName: "Created-Date", width: 200 },
 
     {
       field: "actions",
@@ -43,14 +33,22 @@ function Student() {
       width: 200,
       renderCell: (params) => (
         <div>
-          <VisibilityIcon style={{color:"green"}}  onClick={handleNavigation}/>
-           
-       
-       
+          <Button variant="primary" size="sm" style={{ marginRight: 8 }}>
+            <FaRegEdit style={{ fontSize: "20px" }} />
+          </Button>
+          <Button variant="danger" size="sm">
+            <MdDeleteForever style={{ fontSize: "20px" }} />
+          </Button>
         </div>
       ),
     },
   ];
+
+  const navigation = useNavigate();
+
+  const handleNavigation = () => {
+    navigation("/product-services-test");
+  };
 
   return (
     <div className="px-3">
@@ -59,6 +57,13 @@ function Student() {
           <input type="text" placeholder="Search..." className="search-input" />
           <FaSearch className="search-icon" />
         </div>
+        <Button
+          className="add-btn"
+          onClick={handleNavigation}
+          style={{ width: "200px" }}
+        >
+          Create Test Series
+        </Button>
       </div>
       <Box sx={{ width: "100%" }}>
         <div
@@ -72,4 +77,4 @@ function Student() {
   );
 }
 
-export default Student;
+export default ProductServices;

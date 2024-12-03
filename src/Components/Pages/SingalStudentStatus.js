@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import { CiYoutube } from "react-icons/ci";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { GiNotebook } from "react-icons/gi";
+import { MdOutlineAssignment } from "react-icons/md";
+import { FaNoteSticky } from "react-icons/fa6";
 
 function SingalStudentStatus() {
+
+  const now = 60;
   return (
     <div>
-      <div className="container">
+      <div className="container-fluid">
         <div
           className="row"
           style={{
@@ -78,16 +83,59 @@ function SingalStudentStatus() {
 
         <div className="student-status">
           <div className="student-progress">
-            <div className="">
-              <div className="" style={{ display: "flex", gap: "10px" }}>
-                <CiYoutube />
-                <div className="">Videos</div>
-              </div>
+          <div className="progress-define" style={{ width: '100%' }}>
+      <div 
+        className="progress-header" 
+        style={{ display: 'flex', gap: '10px', alignItems: 'center' ,marginRight:"80px"}}
+      >
+        <CiYoutube style={{ fontSize: '40px' }} />
+        <div style={{ fontSize: '18px', fontWeight: '500' }}>Videos</div>
+      </div>
 
-              <div>
-                <ProgressBar now={100} />
-              </div>
-            </div>
+      <div style={{ width: '70%', marginTop: '10px' }}>
+        <ProgressBar now={now} label={`${now}%`} />
+      </div>
+    </div>
+    <div className="progress-define" style={{ width: '100%' }}>
+      <div 
+        className="progress-header" 
+        style={{ display: 'flex', gap: '10px', alignItems: 'center' ,marginRight:"80px"}}
+      >
+        <FaNoteSticky style={{ fontSize: '40px' }} />
+        <div style={{ fontSize: '18px', fontWeight: '500' }}>Tests</div>
+      </div>
+
+      <div style={{ width: '70%', marginTop: '10px' }}>
+        <ProgressBar now={now} label={`${now}%`} />
+      </div>
+    </div>
+    <div className="progress-define" style={{ width: '100%' }}>
+      <div 
+        className="progress-header" 
+        style={{ display: 'flex', gap: '10px', alignItems: 'center' ,marginRight:"80px"}}
+      >
+        <MdOutlineAssignment style={{ fontSize: '40px' }} />
+        <div style={{ fontSize: '18px', fontWeight: '500' }}>Assignments</div>
+      </div>
+
+      <div style={{ width: '70%', marginTop: '10px' }}>
+        <ProgressBar now={now} label={`${now}%`} />
+      </div>
+    </div>
+    <div className="progress-define" style={{ width: '100%' }}>
+      <div 
+        className="progress-header" 
+        style={{ display: 'flex', gap: '10px', alignItems: 'center' ,marginRight:"80px"}}
+      >
+        <GiNotebook style={{ fontSize: '40px' }} />
+        <div style={{ fontSize: '18px', fontWeight: '500' }}>E-Books</div>
+      </div>
+
+      <div style={{ width: '70%', marginTop: '10px' }}>
+        <ProgressBar now={now} label={`${now}%`} />
+      </div>
+    </div>
+     
           </div>
         </div>
       </div>
